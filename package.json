@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git@github.com:jacoblyles/abcdefghiJson.git"
   },
+  "scripts" : {
+        "test" : "tap ./test/*.js"
+  },
   "keywords": [
     "alphabetize",
     "json",
@@ -19,5 +22,8 @@
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/jacoblyles/abcdefghiJson/issues"
+  },
+  "devDependencies": {
+    "tap": "~0.4.4"
   }
 }
