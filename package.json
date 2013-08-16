@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "underscore": "~1.5.1"
+  },
+  "name": "abcdefghiJson",
+  "version": "0.0.0",
+  "description": "Javascript object keys have no defined ordering. But sometimes you'd like to serialize JSON keys in an order that is human-friendly, like for an API doc. abcdefghijson is your solution. ",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jacoblyles/abcdefghiJson.git"
+  },
+  "keywords": [
+    "alphabetize",
+    "json",
+    "node"
+  ],
+  "author": "Jacob Lyles",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/jacoblyles/abcdefghiJson/issues"
+  }
+}
