@@ -7,7 +7,7 @@ test('make sure it works', function(t){
 	var str1 = alpha(testObj);
 	t.ok(str1);
 
-	var str2 = alpha(testObj);
+	var str2 = alpha(testStr);
 	t.ok(str2);
 
 	t.equal(str1, str2, 'shouldnt matter if we used string or json');
