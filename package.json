@@ -8,7 +8,7 @@
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:jacoblyles/abcdefghiJson.git"
+    "url": "git@github.com:coursera/abcdefghiJson.git"
   },
   "scripts" : {
         "test" : "tap ./test/*.js"
@@ -21,7 +21,7 @@
   "author": "Jacob Lyles",
   "license": "BSD",
   "bugs": {
-    "url": "https://github.com/jacoblyles/abcdefghiJson/issues"
+    "url": "https://github.com/coursera/abcdefghiJson/issues"
   },
   "devDependencies": {
     "tap": "~0.4.4"
