@@ -7,7 +7,10 @@
 				result.push(_alphabetize(el));
 			});
 			var resultStr = '[';
-			for(var item, i=0; item = result[i]; i++){
+			for(var i=0; i < result.length; i++){
+				var item = result[i];
+				// JSON.stringify converts undefined to null in an Array
+				if (item === undefined) item = null;
 				resultStr += item;
 				if(i !== result.length - 1){
 					resultStr += ',';
@@ -18,15 +21,20 @@
 		} else if(_.isObject(obj)){
 			var result = [];
 			_.each(obj, function(val, key){
-				result.push({
-					key: key,
-					val: _alphabetize(val)
-				});
+				var res = _alphabetize(val);
+				// since we are returning a string, we need to drop undefined since
+				// JSON.parse doesn't handle it
+				if (res !== undefined) {
+					result.push({
+						key: key,
+						val: res
+					});
+				}
 			});
 			result = result.sort(function(a, b){
 				if(a.key < b.key){
-					return -1
-				} 
+					return -1;
+				}
 				return 1;
 			});
 
@@ -34,19 +42,17 @@
 			for(var item, i = 0; item = result[i]; i++){
 				resultStr += '"' + item.key + '"' + ':' + item.val;
 				if (i !== result.length - 1){
-					resultStr += ','
+					resultStr += ',';
 				}
 			}
 			resultStr += '}';
 			return resultStr;
-		} else if(_.isString(obj)){
-			// strings should be double-quoted
-			return '"' + obj + '"';
-		} else {
-			// booleans, numbers, and null can just be returned
-			return obj;
+		} else{
+			// strings, booleans, numbers, NaN, Date, undefined and null can
+			// just be stringified
+			return JSON.stringify(obj);
 		}
-	};
+	}
 
 	function alphabetize(arg){
 		if(typeof arg === 'string'){
